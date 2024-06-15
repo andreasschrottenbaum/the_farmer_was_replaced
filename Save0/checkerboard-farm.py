@@ -1,10 +1,7 @@
 from Save0.harvest_functions import hydrate, plant_and_harvest
-from reset_position import reset_pos
-
 item = Entities.Tree
 altItem = Entities.Grass
-
-reset_pos()
+clear()
 
 while True:
   for colCount in range(get_world_size()):
