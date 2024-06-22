@@ -1,5 +1,5 @@
 from Save0.harvest_functions import hydrate, plant_and_harvest
-item = Entities.Tree
+item = Entities.Grass
 altItem = Entities.Grass
 clear()
 

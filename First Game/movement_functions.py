@@ -1,5 +1,3 @@
-world_size = get_world_size()
-
 def move_to_start():
   while get_pos_x() != 0:
     move(West)
@@ -7,6 +5,8 @@ def move_to_start():
     move(South)
 
 def move_to_end():
+  world_size = get_world_size()
+
   while get_pos_x() != world_size - 1:
     move(East)
   while get_pos_y() != world_size - 1:
@@ -16,27 +16,31 @@ def move_to_end():
 def move_to(x, y):
   current_x, current_y = get_pos_x(), get_pos_y()
 
-  if current_x < (x / (world_size / 2)):
+  if current_x < x:
     while get_pos_x() != x:
       move(East)
-  elif current_x > (x / (world_size / 2)):
+  elif current_x > y:
     while get_pos_x() != x:
       move(West)
 
-  if current_y < (y / (world_size / 2)):
+  if current_y < y:
     while get_pos_y() != y:
       move(South)
 
-  elif current_y > (y / (world_size / 2)):
+  elif current_y > y:
     while get_pos_y() != y:
       move(North)
 
 def move_to_next():
+  world_size = get_world_size()
+
   next_x = (get_pos_x() + 1) % world_size
   next_y = (get_pos_y() + (next_x == 0)) % world_size
   move_to(next_x, next_y)
 
 def move_to_previous():
+  world_size = get_world_size()
+
   if get_pos_x() == 0:
     move(North)
     if get_pos_y() != 0:
@@ -48,6 +52,8 @@ def move_to_previous():
     move(West)
 
 def move_to_highest():
+  world_size = get_world_size()
+
   highest = 0
   highest_pos = 0
   for a in range(world_size):
@@ -61,6 +67,8 @@ def move_to_highest():
   move_to(highest_pos[0], highest_pos[1])
 
 def move_to_lowest():
+  world_size = get_world_size()
+
   lowest = 100
   lowest_pos = 0
   for a in range(world_size):
@@ -74,6 +82,8 @@ def move_to_lowest():
   move_to(lowest_pos[0], lowest_pos[1])
 
 def move_to_nearest():
+  world_size = get_world_size()
+
   nearest = 100
   nearest_pos = 0
   for a in range(world_size):
@@ -87,6 +97,8 @@ def move_to_nearest():
   move_to(nearest_pos[0], nearest_pos[1])
 
 def move_to_farthest():
+  world_size = get_world_size()
+
   farthest = 0
   farthest_pos = 0
   for a in range(world_size):
@@ -100,18 +112,26 @@ def move_to_farthest():
   move_to(farthest_pos[0], farthest_pos[1])
 
 def move_to_random():
+  world_size = get_world_size()
+
   move_to(random.randint(0, world_size - 1), random.randint(0, world_size - 1))
 
 def move_to_center():
+  world_size = get_world_size()
+
   move_to(world_size // 2, world_size // 2)
 
 def move_to_edge():
+  world_size = get_world_size()
+
   if get_pos_x() < world_size // 2:
     move_to(0, get_pos_y())
   else:
     move_to(world_size - 1, get_pos_y())
 
 def move_to_corner():
+  world_size = get_world_size()
+
   if get_pos_x() < world_size // 2:
     if get_pos_y() < world_size // 2:
       move_to(0, 0)
@@ -124,6 +144,8 @@ def move_to_corner():
       move_to(world_size - 1, world_size - 1)
 
 def move_to_diagonal():
+  world_size = get_world_size()
+
   if get_pos_x() < world_size // 2:
     if get_pos_y() < world_size // 2:
       move_to(0, world_size - 1)
@@ -136,6 +158,8 @@ def move_to_diagonal():
       move_to(0, world_size - 1)
 
 def move_to_opposite():
+  world_size = get_world_size()
+
   move_to(world_size - 1 - get_pos_x(), world_size - 1 - get_pos_y())
 
 def get_position():

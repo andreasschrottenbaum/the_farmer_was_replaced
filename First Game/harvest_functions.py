@@ -50,3 +50,11 @@ def plant_and_harvest(item, shouldHarvest = True):
 		buy_seeds(Items.Sunflower_Seed)
 		make_ground(Grounds.Soil)
 		plant(Entities.Sunflower)
+
+	elif item == Entities.Dinosaur:
+		buy_seeds(Items.Egg)
+		make_ground(Grounds.Turf)
+		use_item(Items.Egg)
+
+	elif item == Entities.Cactus:
+		buy_seeds(Items.Cactus_Seed)
