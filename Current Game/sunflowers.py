@@ -14,11 +14,9 @@ def sunflower_farm(amount):
             if get_ground_type() != Grounds.Soil:
                 till()
 
-            if get_entity_type() == None:
+            while get_entity_type() != Entities.Sunflower:
+                harvest()
                 plant(Entities.Sunflower)
-
-                if get_entity_type() != Entities.Sunflower:
-                    print("STOP")
 
             hydrate()
             move_next()
