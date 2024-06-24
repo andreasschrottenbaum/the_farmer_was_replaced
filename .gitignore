@@ -1,2 +1,6 @@
-First\ Game/
-Second\ Game/
+*
+*/**
+
+!Current\ Game/
+!Current\ Game/**
+!Current\ Game.json

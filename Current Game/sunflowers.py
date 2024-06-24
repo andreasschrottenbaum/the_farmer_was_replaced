@@ -7,7 +7,7 @@ def sunflower_farm(amount):
     farm_size = get_world_size() * get_world_size()
 
     while num_items(Items.Power) < amount:
-        request_items(Items.Sunflower_Seed, farm_size)
+        request_items(Items.Sunflower_Seed, farm_size + 1)
         clear()
 
         for i in range(farm_size):
